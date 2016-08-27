@@ -1,0 +1,33 @@
+{
+  "name": "node-red-qnap-timeseries",
+  "version": "1.0.0",
+  "description": "Node-RED node to process time-series data in mongodb",
+  "main": "mongo-timeseries.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/weikunlu/node-red-qnap-timeseries.git"
+  },
+  "keywords": [
+    "node-red", "mongodb", "timeseries", "QNAP"
+  ],
+  "node-red": {
+    "nodes": {
+      "mongo-timeseries": "mongo-timeseries.js"
+    }
+  },
+  "dependencies"  : {
+    "mongodb"   : "*",
+    "md5":"*",
+    "moment": "*",
+    "when": "3.7.7"
+  },
+  "author": "Weikun Lu",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/weikunlu/node-red-qnap-timeseries/issues"
+  },
+  "homepage": "https://github.com/weikunlu/node-red-qnap-timeseries#readme"
+}

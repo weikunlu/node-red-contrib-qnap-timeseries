@@ -1,0 +1,37 @@
+<script type="text/x-red" data-template-name="mongodb out">
+
+	<div class="form-row">
+		<label for="node-input-name"><i class="fa fa-tag"></i> <span data-i18n="node-red:common.label.name"></span></label>
+		<input type="text" id="node-input-name" data-i18n="[placeholder]node-red:common.label.name">
+	</div>
+
+	<div class="form-tips" id="node-warning"><span data-i18n="[html]mongodb.tip"></span></div>
+</script>
+
+<script type="text/x-red" data-help-name="mongodb out">
+	<span data-i18n="[html]mongodb.helptext"></span>
+</script>
+
+<script type="text/javascript">
+
+	RED.nodes.registerType('mongodb out', {
+		category: 'QNAP',
+		color: "#FF5809",
+		defaults: {
+			name: {value: ""}
+		},
+		inputs: 1,
+		outputs: 0,
+		icon: "db.png",
+		align: "right",
+		paletteLabel: 'QDatabase',
+		label: function() {
+			return this.name||"qiot-database";;
+		},
+		oneditprepare: function(){
+			var node = this;
+		}
+	});
+</script>
+
+

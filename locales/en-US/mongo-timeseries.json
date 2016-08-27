@@ -1,0 +1,14 @@
+{
+	"mongodb": {
+		"label": {
+
+		},
+		"operation": {
+
+		},
+		"tip": "<b> Tip:</b> Ensure <code>msg.payload.deviceId</code> <code>msg.payload.sensorId</code> <code>msg.payload.value</code> in msg.payload object",
+		"errors": {
+		},
+		"helptext":"<p>A simple MongoDB output node. Save data to <b>time-series</b> format in QIoT database.</p>"
+	}
+}
