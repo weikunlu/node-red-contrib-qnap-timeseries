@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/weikunlu/node-red-qnap-timeseries.git"
+    "url": "git+https://github.com/weikunlu/node-red-contrib-qnap-timeseries.git"
   },
   "keywords": [
     "node-red", "mongodb", "timeseries", "QNAP"
@@ -27,7 +27,7 @@
   "author": "Weikun Lu",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/weikunlu/node-red-qnap-timeseries/issues"
+    "url": "https://github.com/weikunlu/node-red-contrib-qnap-timeseries/issues"
   },
-  "homepage": "https://github.com/weikunlu/node-red-qnap-timeseries#readme"
+  "homepage": "https://github.com/weikunlu/node-red-contrib-qnap-timeseries#readme"
 }
