@@ -173,56 +173,38 @@
 			$("#node-input-resolution").change(function(){
 				var type = $("#node-input-resolution").val();
 
+				var interval_opt;
+				var range_opt;
 				switch (type){
 					case 'rm':
-						$("#node-input-interval option").remove();
-						[5, 10, 15, 30].forEach(function(item){
-							$("#node-input-interval").append($("<option></option>")
-								.attr("value", item)
-								.attr("selected", (node.interval == item))
-								.text(item));
-						});
-						$("#node-input-range option").remove();
-						['day'].forEach(function(item){
-							$("#node-input-range").append($("<option></option>")
-								.attr("value", item.substring(0,1))
-								.attr("selected", (node.range == item.substring(0,1)))
-								.text(item));
-						});
+						interval_opt = [5, 10, 15, 30];
+						range_opt = ['day'];
 					break;
 					case 'rh':
-						$("#node-input-interval option").remove();
-						[1, 3, 6, 12].forEach(function(item){
-							$("#node-input-interval").append($("<option></option>")
-								.attr("value", item)
-								.attr("selected", (node.interval == item))
-								.text(item));
-						});
-						$("#node-input-range option").remove();
-						['day','week'].forEach(function(item){
-							$("#node-input-range").append($("<option></option>")
-								.attr("value", item.substring(0,1))
-								.attr("selected", (node.range == item.substring(0,1)))
-								.text(item));
-						});
+						interval_opt = [1, 3, 6, 12];
+						range_opt = ['day', 'week'];
 					break;
 					case 'rd':
-						$("#node-input-interval option").remove();
-						[1].forEach(function(item){
-							$("#node-input-interval").append($("<option></option>")
-								.attr("value", item)
-								.attr("selected", (node.interval == item))
-								.text(item));
-						});
-						$("#node-input-range option").remove();
-						['week', 'month'].forEach(function(item){
-							$("#node-input-range").append($("<option></option>")
-								.attr("value", item.substring(0,1))
-								.attr("selected", (node.range == item.substring(0,1)))
-								.text(item));
-						});
+						interval_opt = [1];
+						range_opt = ['week', 'month'];
 					break;
 				}
+
+				$("#node-input-interval option").remove();
+				interval_opt.forEach(function(item){
+					$("#node-input-interval").append($("<option></option>")
+						.attr("value", item)
+						.attr("selected", (node.interval == item))
+						.text(item));
+				});
+				$("#node-input-range option").remove();
+				range_opt.forEach(function(item){
+					$("#node-input-range").append($("<option></option>")
+						.attr("value", item.substring(0,1))
+						.attr("selected", (node.range == item.substring(0,1)))
+						.text(item));
+				});
+
 			});
 
 			$("#node-input-resolution").change();
