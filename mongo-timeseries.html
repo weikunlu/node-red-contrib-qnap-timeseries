@@ -142,7 +142,28 @@
 </script>
 
 <script type="text/x-red" data-help-name="mongodb aggre">
-	<p></p>
+	<p>Pass <code>msg.payload.start_date</code> and <code>msg.payload.end_date</code> can enable date range filter function</p>
+
+	<p>The following functions are available to define date variable:</p>
+		<ul>
+			<li><code>new Date()</code></li>
+			<li><code>"2016-08-29T04:25:32.610Z"</code></li>
+		</ul>
+
+	<p>Sample code:</p>
+	<pre>var start_date = new Date();
+start_date.setHours(start_date.getHours() - 2);
+
+var msg = {
+	payload: {
+    start_date: start_date,
+    end_date: new Date()
+	}
+};
+	</pre>
+
+	<p><b>Note: </b>Datetime in UTC</p>
+
 </script>
 
 <script type="text/javascript">
