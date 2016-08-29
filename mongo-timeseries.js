@@ -256,19 +256,16 @@ module.exports = function(RED) {
 
 				var matchObj = {};
 				matchObj["sensorId"] = sensorId;
+
 				if(msg.payload.start_date && msg.payload.end_date){
-					matchObj["timestamp"] = {$gte: new Date(), $lte: new Date()};
+					matchObj["timestamp"] = {$gte: msg.payload.start_date, $lte: msg.payload.end_date};
 				}else{
 					if(msg.payload.start_date){
-						// var startTime = new Date();
-						// var endTime = new Date();
-						// endTime.setHours(endTime.getHours() - 2);
-						// "timestamp":{$gte: ed, $lte: new Date()}
-						matchObj["timestamp"] = {$gte: new Date()};
+						matchObj["timestamp"] = {$gte: msg.payload.start_date};
 					}
 
 					if(msg.payload.end_date){
-						matchObj["timestamp"] = {$lte: new Date()};
+						matchObj["timestamp"] = {$lte: msg.payload.end_date};
 					}
 				}
 
@@ -285,8 +282,6 @@ module.exports = function(RED) {
 				aggrs.push({$project: {"_id":1, "vavg": {$divide: ["$mysum","$mycount"]}, "vmax":1, "vmin":1}});
 				aggrs.push({$sort: {"_id":-1} });
 				aggrs.push({$limit: limit });
-
-				console.log('[debug]'+JSON.stringify(aggrs));
 
 				coll.aggregate(aggrs)
 					.toArray(function(err, result) {
