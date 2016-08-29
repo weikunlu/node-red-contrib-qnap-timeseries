@@ -1,14 +1,22 @@
 {
 	"mongodb": {
 		"label": {
-
+			"host": "Host",
+			"port": "Port",
+			"database": "Database",
+			"username": "Username",
+			"password": "Password",
+			"server": "Server",
+			"collection": "Collection"
 		},
 		"operation": {
 
 		},
 		"tip": "<b> Tip:</b> Ensure <code>msg.payload.deviceId</code> <code>msg.payload.sensorId</code> <code>msg.payload.value</code> in msg.payload object",
 		"errors": {
-		},
-		"helptext":"<p>A simple MongoDB output node. Save data to <b>time-series</b> format in QIoT database.</p>"
+			"nodbconfig":"oo database configuration found",
+			"nocollection": "illegal message payload format",
+			"diffcollection": "device id was changed"
+		}
 	}
 }
