@@ -7,7 +7,13 @@
 			"username": "Username",
 			"password": "Password",
 			"server": "Server",
-			"collection": "Collection"
+			"collection": "Collection",
+
+			"deviceid": "Device ID",
+			"sensorid": "Sensor ID",
+			"resolution": "Resolution",
+			"interval": "Interval",
+			"range": "Range"
 		},
 		"operation": {
 
